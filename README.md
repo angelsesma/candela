@@ -4,7 +4,9 @@
 **Co-author:** Leonardo Jiménez Martínez
 **Location:** Mineral del Chico, Hidalgo, Mexico
 **Date:** March 14, 2025
+
 ---
+
 ## 1. Introduction
 
 The game of Go poses a significant challenge for artificial intelligence due to its profound complexity, which has captivated scholars for centuries. While computer programs capable of playing Go have existed for decades, the last nine years (2016-2025) have marked a turning point, with systems achieving - and even surpassing - professional human performance. A notable shift in gameplay strategy emerged around 2016, driven by the adoption of unconventional yet effective moves demonstrated by AI programs, fundamentally altering traditional approaches.
