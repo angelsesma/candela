@@ -42,17 +42,16 @@ We collected 3,147 recent professional games from online repositories (e.g., [ht
 
 Based on the pseudocode from [1], we implemented the algorithm in Python 3. In this version, only the top 16 most frequent patterns are extracted to simplify comparative analysis:
 
-
+`python
 For each game:
     For each move:
         Extract the 5×5 grid centered on the move.
         Convert the grid to its canonical form.
         Update the pattern's frequency in the database.
 Sort the database in descending order.
-Print the top 16 patterns with their frequency and % of games.
+Print the top 16 patterns with their frequency and % of games.`
+
 (The algorithm has linear complexity relative to the number of moves, making it efficient for large datasets [1].)
-
-
 
 
 ### 3.4 Statistical Analysis
