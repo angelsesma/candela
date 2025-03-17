@@ -49,7 +49,7 @@ For each game:
         Convert the grid to its canonical form.
         Update the pattern's frequency in the database.
 Sort the database in descending order.
-Print the top 16 patterns with their frequency and % of games.
+Print the top 16 patterns with their frequency.
 ```
 
 (The algorithm has linear complexity relative to the number of moves, making it efficient for large datasets [1].)
