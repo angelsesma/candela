@@ -1,9 +1,12 @@
 # Pattern Acquisition and Comparative Analysis in the Game of Go: A Modern Approach
 
-**Author:** Ángel Alberto Sesma González
-**Co-author:** Leonardo Jiménez Martínez
-**Location:** Mineral del Chico, Hidalgo, Mexico
-**Date:** March 14, 2025
+
+**Autor:** Ángel Alberto Sesma González  
+**Coautor:** Leonardo Jiménez Martínez  
+**Ubicación:** Mineral del Chico, Hidalgo, México  
+**Fecha:** 14 de marzo de 2025  
+
+---
 
 ---
 
@@ -20,6 +23,9 @@ We developed a Python program to analyze approximately 3,000 professional games 
 - We analyze high-frequency patterns in over 3,000 recent professional games, comparing them with 2007 results to identify evolutionary trends.
 - We provide a quantitative comparative analysis of historical and contemporary popular patterns, revealing shifts in Go strategies.
 
+
+---
+
 ## 2. Related Work
 
 Pattern acquisition and analysis in Go have been extensively studied. Early efforts focused on manual pattern compilation and linguistic approaches to name specific moves in relation to their immediate surroundings and resulting shapes (e.g., keima, hane, tsuke, shimari, kikashi, nobi, ikken-tobi). In [1], a statistical method for automatic pattern acquisition was introduced, defining patterns as spatial relationships within a fixed $5 \times 5$ grid. This work demonstrated the feasibility of extracting high-quality patterns from game records and emphasized the importance of statistical usage to determine pattern urgency.
@@ -27,6 +33,9 @@ Pattern acquisition and analysis in Go have been extensively studied. Early effo
 Recent advances in AI, particularly deep reinforcement learning, have shifted focus toward systems like AlphaGo, KataGo, or LeelaZero. Nevertheless, pattern-based approaches remain relevant for understanding human play and for developing AI systems. Studies since the 1990s have explored Monte Carlo tree search for move generation [2], terminology for board situations (e.g., liberties, captures, ko fights, and living groups) [3, 4], combinatorial methods to resolve complex endgame positions [5], and cataloged complexity levels for Go rule sets and variants [6].
 
 Despite these advances, there is a lack of comparative studies analyzing the evolution of Go patterns over time. This article addresses that gap by applying the methodology of [1] to a modern dataset of professional games.
+
+
+---
 
 ## 3. Methodology
 
@@ -61,6 +70,9 @@ Print the top 16 patterns with their frequency.
 
 We analyzed the frequency distribution of patterns and identified the 16 most frequent ones. Based on these results, we detected potential stylistic changes in professional play over 18 years.
 
+
+---
+
 ## 4. Results
 
 ### 4.1 High-Frequency Patterns
@@ -83,15 +95,24 @@ The 3-3 invasion, once considered a late-game tactic, has gained urgency, while 
 
 The 4-4 opening point, historically secondary, now dominates over 3-4, showing modern preferences for flexible, balanced openings.
 
+
+---
+
 ## 5. Discussion
 
 While $5 \times 5$ regional analysis does not capture global dynamics, it reveals low-frequency patterns that serve as continuations of high-frequency ones. By comparing a pattern's prevalence to its local continuations, we infer the relative frequency of moves outside the $5 \times 5$ area - a phenomenon consistent with tennuki (prioritizing a distant move over a local continuation). For example, if a pattern exceeds the frequency of its immediate continuation, players likely prioritize global strategies over local battles.
 
 Advances in computational power enable expanding this methodology to larger regions (e.g., $7 \times 7$ or $9 \times 9$), offering richer insights into strategic evolution. Periodic replication of this study could deepen understanding of professional play, revitalize traditional proverbs, and modernize pedagogical frameworks.
 
+
+---
+
 ## 6. Conclusion
 
 This paper presents a modern approach to automatic pattern acquisition in Go, building on the foundational work of [1]. By analyzing an extensive dataset of recent professional games, we identify key trends in pattern usage, offering new perspectives on strategic evolution. Our results underscore the relevance of pattern-based approaches in both human and AI play and provide a framework for future research in game AI and pattern recognition.
+
+
+---
 
 ## 7. Acknowledgments
 
@@ -100,6 +121,8 @@ We thank the virtual assistant Deepseek for its multidisciplinary capabilities a
 We thank Mario Alberto Mercado and Siddartha Ávila for their support during this study.
 
 Last but not least, we dedicate this work to the memory of Professor José "Pepe Chac" Chacón, for his exemplary fighting spirit and invaluable contributions to Mexico's Go community.
+
+---
 
 ## 8. References
 
