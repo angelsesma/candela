@@ -2,7 +2,7 @@
 
 **Author:** Ángel Alberto Sesma González  
 **Co-author:** Leonardo Jiménez Martínez  
-**Fecha:** 14 de marzo de 2025  
+**Date:** 14 de marzo de 2025  
 
 ---
 
