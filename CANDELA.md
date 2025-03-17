@@ -2,7 +2,6 @@
 
 **Autor:** Ángel Alberto Sesma González  
 **Coautor:** Leonardo Jiménez Martínez  
-**Ubicación:** Mineral del Chico, Hidalgo, México  
 **Fecha:** 14 de marzo de 2025  
 
 ---
