@@ -1,12 +1,8 @@
 # Pattern Acquisition and Comparative Analysis in the Game of Go: A Modern Approach
 
-
-**Autor:** Ángel Alberto Sesma González  
-**Coautor:** Leonardo Jiménez Martínez  
-**Ubicación:** Mineral del Chico, Hidalgo, México  
+**Author:** Ángel Alberto Sesma González  
+**Co-author:** Leonardo Jiménez Martínez  
 **Fecha:** 14 de marzo de 2025  
-
----
 
 ---
 
