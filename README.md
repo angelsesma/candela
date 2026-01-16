@@ -1,4 +1,6 @@
 # Pattern Acquisition and Comparative Analysis in the Game of Go: A Modern Approach
+## Journal of Go Studies 2025 Volume 2: 
+https://intergostudies.net/journal/journal_view.asp?jn_num=9
 
 **Author:** Ángel Alberto Sesma González  
 **Co-author:** Leonardo Jiménez Martínez  
@@ -246,4 +248,4 @@ doi.org/10.1007/978-3-319-27992-3_8
 ---
 
 ## Table 1
-![Table containing top patterns found](https://github.com/angelsesma/candela/blob/tabla.pdf)
+![tabla.pdf](https://github.com/angelsesma/candela/blob/main/tabla.pdf)
