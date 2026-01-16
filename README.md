@@ -246,4 +246,4 @@ doi.org/10.1007/978-3-319-27992-3_8
 ---
 
 ## Table 1
-![Table containing top patterns found](https://github.com/angelsesma/candela/main/README.md "a title")
+![Table containing top patterns found](https://github.com/angelsesma/candela/blob/tabla.pdf)
