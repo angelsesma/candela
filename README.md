@@ -170,6 +170,7 @@ located in the central area, identifying plays in the 4,4 corner star point (hos
 
 ---
 
+
 ## IV. Findings
 
 ## IV.1. Change in Frequency of Patterns in Professional Games
@@ -214,9 +215,14 @@ pattern usage, offering new insights into the evolution of Go strategies.
 
 Our results underscore the importance of pattern-based approaches in both human and AI
 play, and provide a framework for future research in game AI and pattern recognition.
-VII. Acknowledgements
+
+---
+
+## VII. Acknowledgements
+
 This work is dedicated to the memory of Professor José “Pepe Chac” Chacón, for his
 exemplary fighting spirit and invaluable contributions to Mexico’s Go community.
+
 ---
 
 ## References
