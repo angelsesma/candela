@@ -4,7 +4,6 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 from sgfmill import sgf, boards
 
-# Base de datos de patrones
 pattern_database = defaultdict(int)  # Tracks frequency of patterns across moves
 pattern_file_counter = defaultdict(set)  # Tracks which files contain each pattern
 
@@ -24,8 +23,9 @@ def parse_sgf_file(file_path):
             print(f"Error: El archivo {file_path} está vacío.")
             return None
         game = sgf.Sgf_game.from_bytes(sgf_src)
-        print(f"Archivo SGF leído correctamente: {file_path}")
         successfully_parsed_files += 1  # Increment counter
+        print(f"Archivo SGF {successfully_parsed_files} leído correctamente: {file_path}")
+        
         return game
     except FileNotFoundError:
         print(f"Error: El archivo {file_path} no se encontró.")
@@ -38,41 +38,43 @@ def parse_sgf_file(file_path):
         return None
 
 def rotate_region(region):
-    """Rotate the 5x5 region 90 degrees clockwise."""
+    """Rotate the region 90 degrees clockwise."""
     return tuple(zip(*region[::-1]))
 
 def flip_region(region):
-    """Flip the 5x5 region horizontally."""
+    """Flip the region horizontally."""
     return tuple(tuple(row[::-1]) for row in region)
 
 def invert_region(region):
-    """Invert the 5x5 region by swapping 'b' and 'w'."""
+    """Invert the region by swapping 'b' and 'w'."""
     return tuple(tuple('b' if cell == 'w' else 'w' if cell == 'b' else cell for cell in row) for row in region)
 
 def canonical_form(region, move):
-    """Convert the 5x5 region into its canonical form by rotating, flipping, and inverting."""
-    x, y = move  # Coordinates of the center of the 5x5 region
+    """Convert the region into its canonical form by rotating, flipping, and inverting."""
+    x, y = move  # Coordinates of the center of the  region
 
     # Replace None with appropriate symbols
     new_region = []
-    for i in range(5):
+    for i in range(19):
         row = []
-        for j in range(5):
+        for j in range(19):
             cell = region[i][j]
             if cell is None:
+              
+
                 # Check if the cell is in the first line (top edge)
-                if x + i - 2 == 0:  # First line of the board
-                    row.append('/')  # Use '*' for the first line
-                elif x + i - 2 == 18:
-                     row.append('/')  # Use '*' for the first line
+                if x + i - 9 == 0:  # First line of the board
+                    row.append('/')  # Use '/' for the first line
+                elif x + i - 9 == 18:
+                     row.append('/')  # Use '/' for the first line
                 
-                elif y + j - 2 == 0:
-                     row.append('/')  # Use '*' for the first line
+                elif y + j - 9 == 0:
+                     row.append('/')  # Use '/' for the first line
                 
-                elif y + j - 2 == 18:
-                     row.append('/')  # Use '*' for the first line
+                elif y + j - 9 == 18:
+                     row.append('/')  # Use '/' for the first line
                  # Check if the cell is within the board (lines 2 to 18) both axis
-                elif 1 <= x + i - 2 < 18 and 1 <= y + j - 2 < 18:
+                elif 1 <= x + i - 9 < 18 and 1 <= y + j - 9 < 18:
                     row.append('+')  # Use '+' for empty cells within the board
                 else:
                     row.append('.')  # Use '.' for cells outside the board
@@ -97,14 +99,14 @@ def canonical_form(region, move):
     canonical = min(transformations)
     return canonical
 
-def obtain_5_by_5_region_centered_by(board, move):
-    """Obtiene una región de 5x5 centrada en el movimiento dado."""
+def obtain_19_by_19_region_centered_by(board, move):
+ 
     x, y = move
-    region = [[board.get(x+i, y+j) if 0 <= x+i < board.side and 0 <= y+j < board.side else None for j in range(-2, 3)] for i in range(-2, 3)]
-    return tuple(map(tuple, region))  # Convertir región a tupla para usarla como clave
+    region = [[board.get(x+i, y+j) if 0 <= x+i < board.side and 0 <= y+j < board.side else None for j in range(-9, 10)] for i in range(-9, 10)]
+    return tuple(map(tuple, region))  
 
 def process_game_records(game, file_path):
-    """Procesa los registros de juegos y actualiza la base de datos de patrones."""
+
     board = boards.Board(19)
     moves = game.get_main_sequence()
 
@@ -121,8 +123,8 @@ def process_game_records(game, file_path):
             continue
         x, y = move
         board.play(x, y, colour)
-        region = obtain_5_by_5_region_centered_by(board, (x, y))
-        canonical_region = canonical_form(region, (x, y))  # Pasar las coordenadas del movimiento
+        region = obtain_19_by_19_region_centered_by(board, (x, y))
+        canonical_region = canonical_form(region, (x, y))  
         pattern_database[canonical_region] += 1  # Update the pattern frequency
         patterns_in_file.add(canonical_region)  # Track this pattern in the current file
 
@@ -151,7 +153,7 @@ def process_sgf_folder(folder_path, output_file):
         # Sort patterns by frequency (descending order)
         sorted_patterns = sorted(pattern_database.keys(), key=lambda p: -pattern_database[p])
 
-        for pattern in sorted_patterns[:20]:
+        for pattern in sorted_patterns[:39]:
             pattern_str = '\n'.join([''.join(['☻' if cell == 'b' else '☺' if cell == 'w' else cell for cell in row]) for row in pattern])
             overall_frequency = pattern_database[pattern]  # Total frequency of this pattern
             file_count = len(pattern_file_counter[pattern])  # Number of files containing this pattern
@@ -174,8 +176,9 @@ def process_sgf_folder(folder_path, output_file):
     print(f"Total de archivos SGF procesados exitosamente: {successfully_parsed_files}")
 
 def main():
-    folder_path = "/sgf_files"  # Ruta relativa a la carpeta de archivos SGF
-    output_file = "/output.txt"  # Ruta relativa al archivo de salida
+
+    folder_path = "/path/to/folder"  # path to folder containing sgf files
+    output_file = "/path/to/output.txt"  # path to output text file
     process_sgf_folder(folder_path, output_file)
 
 if __name__ == "__main__":
